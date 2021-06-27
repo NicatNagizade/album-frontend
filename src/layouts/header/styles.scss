@@ -1,29 +1,166 @@
 .header {
-    ul {
-        list-style-type : none;
-        margin          : 0;
-        padding         : 0;
-        overflow        : hidden;
-        background-color: #333;
+    .logo {
+        font-family: Poppins, sans-serif;
+        font-weight: 500;
+        white-space: nowrap;
     }
 
-    li {
-        float: left;
+    .container {
+        padding        : 1em 5em 1em 5em;
+        display        : flex;
+        flex-direction : row;
+        justify-content: space-around;
+        align-items    : center;
+        border-bottom  : 1px solid black;
     }
 
-    li a {
-        display        : block;
-        color          : white;
-        text-align     : center;
-        padding        : 14px 16px;
+    .logo {
+        display  : flex;
+        font-size: 24px;
+    }
+
+    .navbar {
+        display      : flex;
+        justify-items: center;
+        align-items  : center;
+        list-style   : none;
+        margin       : 0;
+        font-family  : Poppins, sans-serif;
+    }
+
+    .nav-list {
+        margin     : 1.5em;
+        align-items: center;
+    }
+
+    .nav-list a {
         text-decoration: none;
+        display        : block;
+        color          : #1c1c1d;
+        font-family    : 'Poppins', sans-serif;
+        font-weight    : 400;
+        font-size      : 16px;
     }
 
-    li a:hover:not(.active) {
-        background-color: #016842;
+    .nav-list a::after {
+        content           : '';
+        display           : block;
+        width             : 0;
+        height            : 1.5px;
+        background        : #000;
+        transition        : width 1s;
+        -webkit-transition: width 1s;
+        -moz-transition   : width 1s;
+        -ms-transition    : width 1s;
+        -o-transition     : width 1s;
     }
 
-    .active {
-        background-color: #04AA6D;
+    .nav-list a:is(.router-link-exact-active)::after {
+        content   : '';
+        display   : block;
+        width     : 100%;
+        height    : 1.5px;
+        background: #000;
+        transition: width 1s;
+    }
+
+    .nav-list a:hover::after {
+        width     : 100%;
+        transition: width 0.3s;
+    }
+    
+    .contact-us {
+        width        : 140px;
+        height       : 50px;
+        border       : none;
+        outline      : none;
+        color        : #fff;
+        font-family  : Poppins, sans-serif;
+        font-weight  : 700;
+        background   : #111;
+        cursor       : pointer;
+        position     : relative;
+        z-index      : 0;
+        border-radius: 25px;
+        margin-left  : 20px;
+    }
+
+    .contact-us:before {
+        content: '';
+        background: linear-gradient(45deg,
+                #ff0000,
+                #ff7300,
+                #fffb00,
+                #48ff00,
+                #00ffd5,
+                #002bff,
+                #7a00ff,
+                #ff00c8,
+                #ff0000);
+        position       : absolute;
+        top            : -2px;
+        left           : -2px;
+        background-size: 400%;
+        z-index        : -1;
+        filter         : blur(5px);
+        width          : calc(100% + 4px);
+        height         : calc(100% + 4px);
+        animation      : glowing 20s linear infinite;
+        opacity        : 0;
+        transition     : opacity 0.3s ease-in-out;
+        border-radius  : 25px;
+    }
+
+    .contact-us:active {
+        color: #000;
+    }
+
+    .contact-us:active:after {
+        background: transparent;
+    }
+
+    .contact-us:hover:before {
+        opacity: 1;
+    }
+
+    .contact-us:after {
+        z-index      : -1;
+        content      : '';
+        position     : absolute;
+        width        : 100%;
+        height       : 100%;
+        background   : #111;
+        left         : 0;
+        top          : 0;
+        border-radius: 25px;
+    }
+
+    @keyframes glowing {
+        0% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 400% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu:hover {
+        cursor: pointer;
+    }
+
+    .menu-item {
+        width           : 20px;
+        height          : 3px;
+        background-color: #1c1c1d;
+        margin-bottom   : 3px;
     }
 }
