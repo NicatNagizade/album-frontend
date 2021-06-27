@@ -19,9 +19,6 @@ export default function AlbumProvider(props) {
                 setAlbums({ ...albums, loading: false, isLoaded: true, data: res.data })
             })
     }
-    const getAlbum = (id) => {
-        return albums.data && albums.data.find(e => e.id === 1)
-    }
     const getIfIsNotLoaded = () => {
         if (!albums.isLoaded) {
             getAlbums()
@@ -30,7 +27,7 @@ export default function AlbumProvider(props) {
     return (
         <ContextAlbum.Provider value={{
             albums, setAlbums,
-            getAlbums, getAlbum,
+            getAlbums,
             getIfIsNotLoaded
         }}>
             {props.children}

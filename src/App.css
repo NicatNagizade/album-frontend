@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Coustard:300,400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,900");
 
 *,
 html {
     margin          : 0;
     padding         : 0;
-    background-color: #eeece5;
     /* border       : 1px solid red; */
 }

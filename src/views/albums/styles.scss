@@ -1,0 +1,108 @@
+.albums {
+  .container {
+    display       : flex;
+    flex-direction: column;
+    height        : 100%;
+    margin        : 0px;
+  }
+
+  .bg {
+    background-color: #eeece5;
+    opacity         : 1;
+    background-image: linear-gradient(#d5d5d5 1.5px, transparent 1.5px), linear-gradient(to right, #d5d5d5 1.5px, #eeece5 1.5px);
+    background-size : 30px 30px;
+  }
+
+  .card-container {
+    padding       : 2.5em 5em 1em 5em;
+    display       : flex;
+    flex-direction: column;
+  }
+
+  /* CARD HEADER */
+  .card-container>h3 {
+    margin     : 0 0 0 10px;
+    font-family: Poppins, sans-serif;
+  }
+
+  .card-container {
+    border    : 1px solid #1c1c1d;
+    // padding: 30px;
+
+  }
+
+  /* CARD SLIDER */
+  .card-pictures {
+    display       : flex;
+    width         : 100%;
+    height        : 100%;
+    flex-direction: row;
+  }
+
+  /* CARD ITEM */
+  .card {
+    display        : flex;
+    flex-direction : column;
+    max-width      : 100%;
+    max-height     : 100%;
+    /* margin      : 10px; */
+    padding        : 10px;
+    justify-content: center;
+    align-items    : center;
+  }
+
+  .card>img {
+    border-radius        : 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius   : 6px;
+    -ms-border-radius    : 6px;
+    -o-border-radius     : 6px;
+  }
+
+
+  .read-more {
+    display           : flex;
+    justify-content   : center;
+    align-items       : center;
+    border            : 0;
+    background-color  : #eeece5;
+    color             : #928c00;
+    width             : 140px;
+    height            : 60px;
+    align-self        : flex-end;
+    margin-top        : 20px;
+    margin-right      : 10px;
+    font-size         : 1em;
+    font-family       : Poppins, sans-serif;
+    border            : 1px solid black;
+    cursor            : pointer;
+    transition        : transform 0.3s;
+    -webkit-transition: transform 0.3s;
+    -moz-transition   : transform 0.3s;
+    -ms-transition    : transform 0.3s;
+    -o-transition     : transform 0.3s;
+  }
+
+  .read-more:hover {
+    transform        : rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform   : rotate(-10deg);
+    -ms-transform    : rotate(-10deg);
+    -o-transform     : rotate(-10deg);
+  }
+
+  .read-more>a>svg {
+    width      : 15px;
+    height     : 15px;
+    margin-left: 8px;
+  }
+
+  .read-more>a {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    text-decoration: none;
+    outline        : none;
+    color          : #928c00;
+  }
+}
