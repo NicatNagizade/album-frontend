@@ -21,7 +21,7 @@ export default function Albums() {
                                     <h3>{album.title}</h3>
                                     <div className="card-pictures">
                                         {
-                                            album.photos.slice(0, 7).map((photo, j) => {
+                                            album.photos.slice(0, 6).map((photo, j) => {
                                                 return (
                                                     <div key={j} className="card">
                                                         <img alt="" src={photo.thumbnailUrl} width="150" height="150" />
