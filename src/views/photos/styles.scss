@@ -1,0 +1,56 @@
+
+.photos {
+    width : 100%;
+    margin: auto;
+    &.bg-pho {
+        background-color: #eeece5;
+        opacity         : 1;
+        background-image: linear-gradient(#d5d5d5 1.5px, transparent 1.5px), linear-gradient(to right, #d5d5d5 1.5px, #eeece5 1.5px);
+        background-size : 30px 30px;
+    }
+
+    .photos-title {
+        font-size  : 26px;
+        text-align : center;
+        font-family: Poppins, sans-serif;
+        padding    : 30px 0;
+    }
+
+    .photos-cards {
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: space-around;
+    }
+
+    .photo-card {
+        display         : flex;
+        flex-direction  : column;
+        box-shadow      : 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition      : 0.3s;
+        max-width       : 260px;
+        background-color: #eeece5;
+        margin          : 12px 12px 6px 0;
+    }
+
+    .photo-card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .photo-title {
+        display        : flex;
+        overflow       : hidden;
+        height         : 30%;
+        justify-content: center;
+        align-items    : center;
+
+        p {
+            padding   : 0 8px;
+            text-align: center;
+        }
+    }
+
+    .photo-image {
+        width : 100%;
+        height: 70%;
+    }
+}

@@ -10,13 +10,12 @@ export default function Albums() {
     useEffect(() => {
         getIfIsNotLoaded()
     }, [])
-    console.log(albums)
     return (
         <div className="albums">
             <div className="container">
                 <Loader load={albums.loading}>
                     {
-                        albums && albums.data && albums.data.slice(0, 10).map((album, i) => {
+                        albums && albums.data && albums.data.map((album, i) => {
                             return (
                                 <div key={i} className="card-container bg">
                                     <h3>{album.title}</h3>
