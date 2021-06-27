@@ -10,17 +10,27 @@ export default function Header() {
     }
     return (
         <div className="header">
-            <ul>
-                {
-                    links.map((l, i) => {
-                        return i === active
-                        ?
-                         <li className="active" onClick={() => handleClick(i)} key={i}><Link to={l.to}>{l.name}</Link></li>
-                         :
-                         <li onClick={() => handleClick(i)} key={i}><Link to={l.to}>{l.name}</Link></li>
-                    })
-                }
-            </ul>
+            <div className="header container">
+                <div className="logo">
+                    <p>Album</p>
+                </div>
+                <ul className="navbar">
+                    {
+                        links.map((link, i) => {
+                            return (
+                                <li key={i} className="nav-list">
+                                    <Link to={link.to}> {link.name} </Link>
+                                </li>
+                            )
+                        })
+                    }
+                    <li>
+                        <a href="mailto:nicatnagizade53@gmail.com">
+                            <button className="contact-us">Contact Me</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     )
 }
