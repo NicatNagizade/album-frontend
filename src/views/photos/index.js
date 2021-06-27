@@ -25,7 +25,7 @@ export default function Photos(props) {
                                 <div className="photos-title">{album.title}</div>
                                 <div className="photos-cards">
                                     {
-                                        album.photos.map((photo, i) => {
+                                        album.photos && album.photos.map((photo, i) => {
                                             return (
                                                 <div key={i} className="photo-card">
                                                     <img className="photo-image" src={photo.url} alt="" />
