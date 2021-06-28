@@ -1,23 +1,34 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles.scss'
 import { AlbumContext } from '../../contexts/album'
 import Loader from '../../components/loader'
 import { Link } from 'react-router-dom'
+import InputSearch from '../../components/input_search'
 
 export default function Albums() {
     const { albums, getIfIsNotLoaded } = AlbumContext()
+    const [value, setValue] = useState('')
+    const [filteredAlbums, setFilteredAlbums] = useState(albums)
 
     useEffect(() => {
         getIfIsNotLoaded()
     }, [])
+
+    useEffect(() => {
+        const data = value ? albums.data.filter(e => {
+            return e.title.includes(value)
+        }) : albums.data
+        setFilteredAlbums({ ...albums, data: data })
+    }, [albums, value])
     return (
         <div className="albums">
-            <div className="container">
-                <Loader load={albums.loading}>
+            <div className="container bg">
+                <Loader load={filteredAlbums.loading}>
+                    <InputSearch className="albums-search" setValue={setValue} />
                     {
-                        albums && albums.data && albums.data.map((album, i) => {
+                        filteredAlbums && filteredAlbums.data && filteredAlbums.data.map((album, i) => {
                             return (
-                                <div key={i} className="card-container bg">
+                                <div key={i} className="card-container">
                                     <h3>{album.title}</h3>
                                     <div className="card-pictures">
                                         {

@@ -19,6 +19,16 @@
     flex-direction: column;
   }
 
+  .albums-search {
+    >input{
+      float: right;
+      padding: 3px;
+      font-size: 18px;
+      margin-right: 24px;
+      background-color: rgb(236, 236, 236);
+    }
+  }
+
   /* CARD HEADER */
   .card-container>h3 {
     margin     : 0 0 0 10px;
