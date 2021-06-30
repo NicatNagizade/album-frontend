@@ -5,7 +5,7 @@
 
 **Creating a web application**
 
-- Creating a simple web application, which allows, based on the API (album-backend) developed, to display "cards" that represent the albums and their main information. Implement also a mechanism of data search.
+- Creating a simple web application, which allows, based on the API (album-backend) developed, to display "cards" that represent the albums and their main information. Implemented also a mechanism of data search.
 
 ## Build with
 
