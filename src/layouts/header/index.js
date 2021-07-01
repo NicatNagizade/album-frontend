@@ -1,13 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './styles.scss'
 import { Link } from 'react-router-dom'
 
 export default function Header() {
-    const links = [{ name: "Home", to: "/" }]
-    const [active, setActive] = useState(0)
-    const handleClick = (i) => {
-        setActive(i)
-    }
     return (
         <div className="header">
             <div className="header container h-bg">
@@ -15,15 +10,9 @@ export default function Header() {
                     <p>Album</p>
                 </div>
                 <ul className="navbar">
-                    {
-                        links.map((link, i) => {
-                            return (
-                                <li key={i} className="nav-list">
-                                    <Link to={link.to}> {link.name} </Link>
-                                </li>
-                            )
-                        })
-                    }
+                        <li className="nav-list">
+                            <Link to={'/'} data-testid="home-link"> Home </Link>
+                        </li>
                     <li className="nav-list">
                         <a href="https://github.com/NicatNagizade/album-frontend" target="_blank" rel="noreferrer"> About </a>
                     </li>

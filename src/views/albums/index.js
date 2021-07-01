@@ -9,7 +9,6 @@ export default function Albums() {
     const { albums, getIfIsNotLoaded } = AlbumContext()
     const [value, setValue] = useState('')
     const [filteredAlbums, setFilteredAlbums] = useState(albums)
-
     useEffect(() => {
         getIfIsNotLoaded()
     }, [])
@@ -21,7 +20,7 @@ export default function Albums() {
         setFilteredAlbums({ ...albums, data: data })
     }, [albums, value])
     return (
-        <div className="albums">
+        <div className="albums" data-testid="albums">
             <div className="container bg">
                 <Loader load={filteredAlbums.loading}>
                     <InputSearch className="albums-search" setValue={setValue} />

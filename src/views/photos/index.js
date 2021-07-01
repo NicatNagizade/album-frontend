@@ -22,7 +22,6 @@ export default function Photos(props) {
         })
         setAlbum(data)
     }, [albums, id])
-    console.log(album)
     useEffect(() => {
         const data = value ? album.photos.filter(e => {
             return e.title.includes(value)
@@ -30,7 +29,7 @@ export default function Photos(props) {
         setFilteredAlbum({ ...album, photos: data })
     }, [value, album])
     return (
-        <div className="photos bg-pho">
+        <div  data-testid="photos" className="photos bg-pho">
             <Loader load={albums.loading}>
                 <InputSearch className="photos-search" setValue={setValue} />
                 {
